@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+        <table class="table table-striped">
+    <thead>
+    <tr>
+    <th>Liste d'Animateurs</th>
+    </tr>
+    </thead>
+    <tr> <th>Id</th><th>Nom</th><th>Date Création</th> <th>TV</th></tr>
+<tbody *ngFor="let animateur of animateurs">
+<tr >
+<td>{{animateur.idAnimateur}}</td>
+<td>{{animateur.nomAnimateur}}</td>
+
+<td>{{animateur.dateConfirmation| date:'dd/MM/yyyy'}}</td>
+<td>{{animateur.tv.nomTv}}</td>
+<td><a *ngIf="authService.isAdmin()"
+    class="btn btn-danger" (click)="supprimerAnimateur(animateur)">Supprimer</a></td>
+<td><a *ngIf="authService.isAdmin()"
+    class="btn btn-success" [routerLink]="['/updateAnimateur',animateur.idAnimateur]">Modifier</a></td>
+</tr>
+</tbody>
+  
+    </table>
+    </div>
+    </div>
+    </div>

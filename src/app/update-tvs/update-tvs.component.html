@@ -1,0 +1,20 @@
+<form>
+    <div [hidden]="ajout" >
+        <label>ID Catégorie</label>
+        <input type="text" [(ngModel)]="tv.idTv" name="idTv" class="form-control w-25">
+    </div>
+    <div>
+        <label>Nom Catégorie</label>
+        <input type="text" [(ngModel)]="tv.nomTv" name="nomTv" class="form-control" placeholder="Entrez un nom...">
+    </div>
+    <div>
+        <label>description</label>           
+        <input type="text" [(ngModel)]="tv.descriptionTv" name="descriptionTv" class="form-control" placeholder="Entrez  une description..">
+    </div>
+    
+    <div class="mt-2">
+        <button type="submit" [disabled]="!tv.nomTv" class="btn btn-success"
+            (click)="saveCategorie()" >{{ajout ? 'Ajouter' : 'Modifier'}}
+        </button>
+    </div>
+</form>

@@ -1,0 +1,41 @@
+<router-outlet> </router-outlet>
+<div class="container">
+    <div>
+    <h2>Modifier un Animateur :</h2>
+    </div>
+    <form >
+    <div class="col-sm-2 col-md-2 col-lg-2">
+        
+        
+    <label >ID Animateur</label>
+    <input type="text" [(ngModel)]="currentAnimateur.idAnimateur"
+    name="idAnimateur" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom Animateur</label>
+    <input type="text"[(ngModel)]= "currentAnimateur.nomAnimateur"
+    name="nomAnimateur" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Date de Confirmation</label>
+    <input type="date" [(ngModel)]= "currentAnimateur.dateConfirmation"
+    name="dateConfirmation" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <select class="form-control form-control-lg" id="idTv" name="idTv"
+        [(ngModel)]="updatedTvId">
+        <option *ngFor="let ts of tvs" [value]="ts.idTv" >
+        {{ts.nomTv}}
+        </option>
+        </select>
+        </div>
+    
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="mt-2">
+            <button type="submit" (click)="updateAnimateur()" class="btn btn-success">Modifer</button>
+            </div>
+
+
+            </div>
+        </form>
+      

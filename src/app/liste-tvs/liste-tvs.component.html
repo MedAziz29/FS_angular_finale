@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+            <app-update-tvs (tvUpdated)= "tvUpdated($event)"  [tv]="updatedTv" [ajout]="ajout"></app-update-tvs>
+            </div>
+    <table class="table table-striped">
+    <thead>
+    <tr> <th>Id</th><th>Nom Tv</th> <th>description</th> </tr>
+    </thead>
+    <tbody *ngFor="let tv of tvs">
+    <tr>
+    <td>{{tv.idTv}}</td>
+    <td>{{tv.nomTv}}</td>
+    <td>{{tv.descriptionTv}}</td>
+    <td><a class="btn btn-success"  (click)="updateTv(tv)">Editer</a></td>
+    <td><a class="btn btn-danger" (click)="supprimerTv(tv)">Supprimer</a></td> 
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>

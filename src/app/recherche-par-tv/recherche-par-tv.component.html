@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+        <label>Tvs </label>
+        <select class="form-control form-control-lg" id="idTv" name="idTv"
+        [(ngModel)]="IdTv" (change)="onChange()">
+        <option *ngFor="let tv of tvs" value="{{tv.idTv}}">
+        {{tv.nomTv}}
+         </option>
+        </select>
+        </div>
+        
+    <div class="card shadow mb-4">
+    <div class="card-body">
+        
+        <table class="table table-striped">
+    <thead>
+    <tr>
+    <th>Liste d'Animateurs</th>
+    </tr>
+    </thead>
+    <tr> <th>Id</th><th>Nom</th><th>Date Création</th> <th>TV</th></tr>
+<tbody *ngFor="let animateur of animateurs">
+<tr >
+<td>{{animateur.idAnimateur}}</td>
+<td>{{animateur.nomAnimateur}}</td>
+
+<td>{{animateur.dateConfirmation| date:'dd/MM/yyyy'}}</td>
+<td>{{animateur.tv.nomTv}}</td>
+
+
+
+</tr>
+</tbody>
+  
+    </table>
+    </div>
+    </div>
+    </div>
